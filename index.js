@@ -3,6 +3,7 @@ const express           = require('express'),
       app               = express(),
       bodyParser        = require('body-parser'),
       RealityManager    = require('./VodRealityManager.js'),
+      path              = require('path'),   
       port              = process.env.port || 3000;
 
 app.use(bodyParser.json());
@@ -13,6 +14,12 @@ app.all('*', (req,res,next) => {
     req.next();
 });
 
+
+app.get('/', (req,res) => {
+    console.log(`Get show api ${path.join(__dirname + '/index.html')}`);
+
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
 
 app.get('/getAllRealityShows', (req,res) => {
 

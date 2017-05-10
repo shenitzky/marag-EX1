@@ -32,7 +32,7 @@ exports.getRealityShowById = (showId) => {
 exports.getRealityShowByJannerAndRating = (minRating, maxRating, janner) => {
     minRating = parseInt(minRating);
     maxRating = parseInt(maxRating);
-    if(minRating > 100 || minRating < 0 || maxRating > 100 || maxRating < 0 || maxRating < minRating){
+    if(minRating > 100 || minRating < 0 || maxRating > 100 || maxRating < 0){
         return genarateErrorJson("Values are not valid");
     }
 

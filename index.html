@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>reality-show-vod</title> 
+	</head>	
+	<body>
+		<header>
+			<h1>reality-show-vod API:</h1>
+		</header>
+		<main>
+			<p>
+				<h4>Method: GET /api</h4>
+				<p>
+					<h6>return the app API</h6>
+				</p>
+			</p>
+			<p>
+				<h4>Method: GET /getAllRealityShows</h4>
+				<p>
+					<h6>Parameter: None</h6>
+					<h6>return Json list of all reality shows grouped be janner</h6>
+					<img src="./images/allshows.png"/>
+				</p>
+			</p>
+			<p>
+				<h4>Method:POST /getRealityShowById</h4>
+				<p>
+					<h6>Parameter: id (int)</h6>
+					<h6>return Json with requested show</h6>
+					<h6>Errors: If show id not exists</h6>
+					<img src="./images/showid.png"/>
+				</p>
+			</p>
+			<p>
+				<h4>Method: GET /getRealityShowByJannerAndRating</h4>
+				<p>
+					<h6>Parameter: janner (string), minRating (int), maxRating(int)</h6>
+					<h6>return Json with requested show with rating on range between the minRating to maxRatin grouped by requested janner</h6>
+					<h6>Errors: If janner not exists, if rating argument illigal, if minRating > maxRating</h6>
+					<img src="./images/showjanner.png"/>
+				</p>
+			</p>
+			<p>
+				<h4>In case of error Json from thre following stracture will return:</h4>
+				<img src="./images/error.png"/>
+			</p>	
+		</main>
+	</body>
+</html>
