@@ -4,7 +4,7 @@ const express           = require('express'),
       bodyParser        = require('body-parser'),
       RealityManager    = require('./VodRealityManager.js'),
       path              = require('path'),   
-      port              = process.env.port || 3000;
+      port              = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
