@@ -8,6 +8,7 @@ const express           = require('express'),
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
+app.use('/assets', express.static(path.join(__dirname, 'public')));
 
 app.all('*', (req,res,next) => {
     console.log("logged in");
@@ -18,7 +19,7 @@ app.all('*', (req,res,next) => {
 app.get('/', (req,res) => {
     console.log(`Get show api ${path.join(__dirname + '/index.html')}`);
 
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 app.get('/getAllRealityShows', (req,res) => {
