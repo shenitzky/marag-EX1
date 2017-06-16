@@ -10,6 +10,23 @@ const express           = require('express'),
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use('/assets', express.static(path.join(__dirname, 'public')));
+app.use(
+  (req,res,next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header(
+      "Access-Control-Allow-Methods",
+      "GET, POST"
+  );
+    res.header(
+      "Access-Control-Allow-Credentials", true
+  );
+  res.set("Content-Type", "application/json");
+  next();
+});
 
 app.all('*', (req,res,next) => {
     console.log("logged in");

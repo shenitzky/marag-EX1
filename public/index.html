@@ -21,6 +21,7 @@
 				<h4>Method:POST /getRealityShowById</h4>
 				<p>
 					<h6>Parameter: id (int)</h6>
+					<h6>Send POST method with data as x-www-form-urlencoded,key: id , value: requiered_id </h6>
 					<h6>return Json with requested show</h6>
 					<h6>Errors: If show id not exists</h6>
 					<img src="/assets/images/showid.png"/>
@@ -30,6 +31,7 @@
 				<h4>Method: GET /getRealityShowByJannerAndRating</h4>
 				<p>
 					<h6>Parameter: janner (string), minRating (int), maxRating(int)</h6>
+					<h6>Query example: /getRealityShowByJannerAndRating?janner=doco&minRating=50&maxRating=99</h6>
 					<h6>return Json with requested show with rating on range between the minRating to maxRatin grouped by requested janner</h6>
 					<h6>Errors: If janner not exists, if rating argument illigal, if minRating > maxRating</h6>
 					<img src="/assets/images/showjanner.png"/>
