@@ -36,7 +36,7 @@ app.all('*', (req,res,next) => {
 
 app.get('/', (req,res) => {
     console.log(`Get show api ${path.join(__dirname + '/index.html')}`);
-
+    res.set("Content-Type", "text/html");
     res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
